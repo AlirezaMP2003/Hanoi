@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower of Hanoi</title>
+    <link rel="stylesheet" href="hanoi.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Tower of Hanoi</h1>
+    </header>
+
+    <section id="game">
+        <div class="peg"></div>
+        <div class="peg"></div>
+        <div class="peg"></div>
+    </section>
+
+    <menu>
+        <div>
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn" disabled>Pause</button>
+        </div>
+
+        <select id="numberInput">
+            <option value="1">1 disk</option>
+            <option value="2">2 disks</option>
+            <option value="3">3 disks</option>
+            <option value="4">4 disks</option>
+            <option value="5">5 disks</option>
+            <option value="6">6 disks</option>
+            <option value="7">7 disks</option>
+            <option value="8">8 disks</option>
+            <option value="9">9 disks</option>
+            <option value="10">10 disks</option>
+        </select>
+
+        <select id="delayInput">
+            <option value="0">0 ms delay</option>
+            <option value="250">250 ms delay</option>
+            <option value="500">500 ms delay</option>
+            <option value="1000">1000 ms delay</option>
+            <option value="2000">2000 ms delay</option>
+            <option value="5000">5000 ms delay</option>
+        </select>
+    </menu>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="hanoi.js"></script>
+
+</body>
+</html>

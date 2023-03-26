@@ -1,0 +1,155 @@
+:root{
+    --blue-color: hsl(197,64%,32%);
+    --lightblue-color: hsl(197,64%,45%);
+    --brown-color: hsl(19,64%,45%);
+    --lightbrown-color: hsl(19,64%,60%);
+    --darkbrown-color: hsl(19,64%,30%);
+}
+
+* , 
+*::after , 
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    padding: 30px 0px ;
+}
+
+h1{
+    font-weight: 600;
+    font-size: 45px;
+    text-align: center;
+    color: var(--blue-color);
+}
+
+menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 18px;
+    margin-top: 80px;
+}
+
+button ,
+select {
+    font-size: inherit;
+    font-family: inherit;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+button{
+    padding: 4px 14px;
+    background-color: var(--blue-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover,
+button:focus{
+    filter: brightness(1.2);
+}
+
+button:disabled,
+select:disabled{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+select{
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+select:hover,
+select:focus {
+    border-color: var(--blue-color);
+}
+
+#game{
+    /* outline: 1px solid red; */
+    --disk-number: 3;
+    --game-width: min(500px , 60vh);
+    --game-height: 320px;
+    --board-height: 22px;
+    --peg-height: 270px;
+    --peg-thickness: 8px;
+    --disk-scaler: calc(0.5 * var(--game-width) / var(--disk-number));
+    --disk-height: 26px;
+    width: var(--game-width);
+    height: var(--game-height);
+    margin: 0 auto;
+    position: relative;
+}
+
+#game::after{
+    content: "";
+    position: absolute;
+    top: var(--game-height);
+    height: var(--board-height);
+    background-color: var(--brown-color);
+    width: 160%;
+    transform: translateX(calc(-0.3 * var(--game-width)));
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #000c inset;
+}
+
+.peg{
+    width: var(--peg-thickness);
+    height: var(--peg-height);
+    background: linear-gradient(90deg ,var(--lightbrown-color) , var(--darkbrown-color));
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-top-left-radius: 100vh;
+    border-top-right-radius: 100vh;
+}
+
+.peg:nth-of-type(1){
+    left: 0;
+}
+
+.peg:nth-of-type(2){
+    left: calc(0.5 * var(--game-width));
+}
+
+.peg:nth-of-type(3){
+    left: var(--game-width);
+}
+
+.disk{
+    width: calc(var(--size) * var(--disk-scaler));
+    height: var(--disk-height);
+    /* background-color: blue; */
+    transform: translateX(
+        calc(
+            var(--x) * 0.5 * var(--game-width) - 0.5 * var(--size) * var(--disk-scaler)
+        )
+    )
+    translateY(calc(var(--game-height) - var(--y) * var(--disk-height)));
+    position: absolute;
+    border-radius: 10px;
+    background: linear-gradient(var(--lightblue-color) , var(--blue-color));
+    box-shadow: 0px 0px 5px #0007 inset , 0px 4px 4px #fff6 inset;
+    transition: transform cubic-bezier(0.31, 0.17, 0.4, 0.97);
+}
+
+@media (max-width: 500px) {
+    menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

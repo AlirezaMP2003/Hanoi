@@ -9,3 +9,8 @@ The objective of the puzzle is to move the entire stack to another rod (here con
       
    3_ No disk may be placed on top of a smaller disk.
 
+The game starts with all the disks on one rod in ascending order of size, the smallest at the top. 
+The puzzle can be solved for any number of disks but the minimum number required to solve the puzzle is three.
+
+The Hanoi Tower is an excellent exercise for problem-solving, critical thinking, and strategic planning. 
+It has been used to teach mathematical concepts and algorithms in computer science.

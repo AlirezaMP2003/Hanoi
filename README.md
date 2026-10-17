@@ -13,6 +13,10 @@
 
 </div>
 
+## Preview
+
+![Tower of Hanoi project preview](./hanoi-preview.png)
+
 ## Overview
 
 **Tower of Hanoi** is a browser-based visualization of a classic mathematical puzzle. It uses a recursive algorithm to calculate the moves needed to transfer a stack of disks from one rod to another, then animates those moves in sequence.
@@ -108,10 +112,12 @@ The minimum number of moves for `n` disks is **2ⁿ − 1**. For example:
 
 ```text
 Hanoi/
-├── index.html    # Web page and controls
-├── hanoi.css     # Layout, disks, and animations
-├── hanoi.js      # Recursive solver and playback logic
-└── README.md     # Project documentation
+├── assets/
+│   └── hanoi-preview.png   # Screenshot used in README
+├── index.html              # Web page and controls
+├── hanoi.css               # Layout, disks, and animations
+├── hanoi.js                # Recursive solver and playback logic
+└── README.md               # Project documentation
 ```
 
 ## What I Practiced
